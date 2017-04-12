@@ -26,6 +26,18 @@
 <script type="text/javascript" src="js/knight/jquery.isotope.js"></script>
 <script type="text/javascript" src="js/knight/wow.js"></script>
 <script type="text/javascript" src="js/knight/classie.js"></script>
+<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+<script>
+    Twitch.init({clientId: 'q1xf84du1sgbb7a5ryqn3un7epxzw5'}, function(error, status) {
+        // the sdk is now loaded
+    });
+    if (status.authenticated) {
+        // Already logged in, hide button
+        $('.twitch-connect').hide()
+    }
+</script>
+<script src="js/vendor/angular.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
 <script src="contactform/contactform.js"></script>
 
 <!-- =======================================================
@@ -153,7 +165,7 @@
                     </div>	
                 	<div class="featured-box-col2 wow fadeInRight delay-06s">
                         <h3>report</h3>
-                        <p>During your campaign, we'll provide you with updates on it's status. When your campaign is completed, we help you avoid wasting time and energy by providing you with a DeepDive report. This recaps the campaign in a easy to read summary that you can quickly digest.</p>
+                        <p>During your campaign, we'll update you on it's status. When your campaign is completed, we help you avoid wasting time and energy by providing you with a DeepDive report. This recaps the campaign in a easy to read summary that you can quickly digest.</p>
                     </div>    
                 </div>
                 <a class="Learn-More" href="#">Learn More</a>
@@ -167,7 +179,7 @@
 <section class="main-section paddind" id="Portfolio"><!--main-section-start-->
 	<div class="container">
     	<h2>Case Studies</h2>
-    	<h6>Fresh portfolio of designs that will keep you wanting more.</h6>
+    	<h6>Results driven studies done on a case by case basis</h6>
       <div class="portfolioFilter">  
         <ul class="Portfolio-nav wow fadeIn delay-02s">
         	<li><a href="#" data-filter="*" class="current" >All</a></li>
@@ -240,7 +252,7 @@
             <!--<li><a href="#"><img src="img/c-liogo4.png" alt=""></a></li>-->
             <!--<li><a href="#"><img src="img/c-liogo5.png" alt=""></a></li>-->
     	<!--</ul>-->
-        <p class="text-center client-part-haead wow flipInY delay-1">Free products, software, and game giveaways equals free content for Zeenigami’s stream.<br>Join Zeenigami and others. Apply now by connecting your Twitch to our network.<br><a href="#"><img ng-click="twitchLogin()" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect"/></a></p>
+        <p class="text-center client-part-haead wow flipInY delay-1">Free products, software, and game giveaways equals free content for Zeenigami’s stream.<br>Join Zeenigami and others. Apply now by connecting with Twitch to our network.<br><a href="#"><img ng-click="twitchLogin()" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect"/></a></p>
         <!--<p class="text-center client-part-haead wow flipInY delay-1">Join Zeenigami and others. Apply now by connecting your Twitch to our network.<br><a href="#"><img ng-click="twitchLogin()" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect"/></a></p>-->
 	</div>
 </div><!--c-logo-part-end-->
@@ -319,7 +331,7 @@
         	<div class="col-lg-6 col-sm-7 wow fadeInLeft">
             	<div class="contact-info-box address clearfix">
                 	<h3><i class=" icon-map-marker"></i>Address:</h3>
-                	<span>123 Main Street<br>Orlando, FL, 32801.</span>
+                	<span>101 S Garland Street<br>Orlando, FL, 32801.</span>
                 </div>
                 <div class="contact-info-box phone clearfix">
                 	<h3><i class="fa-phone"></i>Phone:</h3>
