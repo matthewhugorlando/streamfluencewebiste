@@ -6,5 +6,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 /**
  * Created by matthewhug on 4/12/17.
  */
-public interface SFStreamerRepo extends PagingAndSortingRepository<SFStreamer, Long>{
+public interface SFStreamerRepo extends PagingAndSortingRepository<SFStreamer, Long> {
+    public SFStreamer findByTwitchUserId(long twitchUserId);
 }

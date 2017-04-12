@@ -24,7 +24,16 @@ public class SFStreamerController {
     public SFStreamer findStreamer(@RequestParam String oat){
         TwitchHelper th = new TwitchHelper();
         TwitchStreamerDTO tsDTO = th.findTwitchStreamer(oat);
-        SFStreamer sfs = new SFStreamer(tsDTO.get_id(), tsDTO.getBio(), tsDTO.getCreated_at(), tsDTO.getDisplay_name(), tsDTO.getEmail(), tsDTO.isEmail_verified(), tsDTO.getLogo(), tsDTO.getName(), tsDTO.getNotifications().isEmail(), tsDTO.getNotifications().isPush(), tsDTO.isPartnered(), tsDTO.isTwitter_connected(), tsDTO.getType(), tsDTO.getUpdated_at());
+        SFStreamer sfs = sfStreamerRepo.findByTwitchUserId(tsDTO.get_id());
+        if(sfStreamerRepo.findOne(tsDTO.get_id()) == null) {
+            sfs = new SFStreamer(tsDTO.get_id(), tsDTO.getBio(), tsDTO.getCreated_at(), tsDTO.getDisplay_name(), tsDTO.getEmail(), tsDTO.isEmail_verified(), tsDTO.getLogo(), tsDTO.getName(), tsDTO.getNotifications().isEmail(), tsDTO.getNotifications().isPush(), tsDTO.isPartnered(), tsDTO.isTwitter_connected(), tsDTO.getType(), tsDTO.getUpdated_at());
+            sfStreamerRepo.save(sfs);
+        }
         return sfs;
+    }
+
+    @RequestMapping(path = "/list", method = RequestMethod.GET)
+    public Iterable<SFStreamer> listStreamers(){
+        return sfStreamerRepo.findAll();
     }
 }
