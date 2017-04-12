@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>CMS - Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+    <script>
+        Twitch.init({clientId: 'fko5hnqrupt7b2tw6jfs93e7gn7gcu'}, function(error, status) {
+            // the sdk is now loaded
+        });
+        if (status.authenticated) {
+            // Already logged in, hide button
+            $('.twitch-connect').hide()
+        }
+    </script>
+    <script src="js/vendor/angular.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+</head>
+<body ng-controller="login">
+
+<img ng-click="twitchLogin()" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect"/>
+</body>
+</html>

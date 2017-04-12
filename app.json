@@ -1,0 +1,8 @@
+{
+  "name": "Streamfluence Test",
+  "description": "Testing Twitch API integration for new Streamfluence site",
+  "website": "http://www.matttesting.com",
+  "repository": "https://github.com/matthewhugorl",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}
