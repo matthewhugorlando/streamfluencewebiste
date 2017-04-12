@@ -10,6 +10,15 @@ angular.module("app", [])
             Twitch.getStatus(function(err,status){
                 if(status.authenticated) {
                     console.log("Authenticated");
+                    var url = "/rest/streamer/info?oat=" + Twitch.getToken();
+                    var res = $http.get(url);
+                    res.success(function(data, status, headers, config) {
+                        console.log(data.twitchDisplay_name);
+                        // window.location.replace("/");
+                    });
+                    res.error(function(data, status, headers, config) {
+                        console.log("FAILED");
+                    });
                 }
             });
         });
@@ -18,7 +27,6 @@ angular.module("app", [])
             Twitch.login({
                 scope: ['user_read', 'channel_read']
             });
-            alert(Twitch.getToken());
         };
 
     })
