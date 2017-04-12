@@ -14,18 +14,18 @@ angular.module("app", [])
                     var res = $http.get(url);
                     res.success(function(data, status, headers, config) {
                         $scope.streamer = data;
-                        var url2 = "/rest/streamer/list";
-                        var res2 = $http.get(url2);
-                        res2.success(function(data, status, headers, config) {
-                            $scope.streamers = data;
-                        });
-                        res2.error(function(data, status, headers, config) {
-                            console.log("FAILED TO GET LIST");
-                        });
                         // window.location.replace("/");
                     });
                     res.error(function(data, status, headers, config) {
                         console.log("FAILED");
+                    });
+                    var url2 = "/rest/streamer/list";
+                    var res2 = $http.get(url2);
+                    res2.success(function(data, status, headers, config) {
+                        $scope.streamers = data;
+                    });
+                    res2.error(function(data, status, headers, config) {
+                        console.log("FAILED TO GET LIST");
                     });
                 }
             });
