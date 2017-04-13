@@ -868,3 +868,25 @@ border: 2px solid #fff;
 	animation-delay: 1.2s; 
 	-webkit-animation-delay: 1.2s; 
 }
+
+/*Matt added*/
+
+.d-logo-part{
+	background:#7E5CAA;
+	padding:25px 0;
+	filter: alpha(opacity=60);
+}
+.d-logo-part ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+	text-align:center;
+}
+.d-logo-part ul li{
+	display:inline;
+	margin:0 25px;
+}
+.d-logo-part ul a{
+	display:inline-block;
+	margin: 0 20px;
+}
