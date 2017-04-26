@@ -868,3 +868,38 @@ border: 2px solid #fff;
 	animation-delay: 1.2s; 
 	-webkit-animation-delay: 1.2s; 
 }
+
+.youtube-twitch{
+	background:url(../img/twitch-youtube-1400x475-banner.jpg) top center no-repeat;
+	background-size:cover;
+	padding:60px 0 10px;
+	text-align:center;
+}
+
+.rlink{
+	padding:15px 35px;
+	background:#805eac;
+	color:#fff !important;
+	font-size:16px;
+	font-weight:400;
+	font-family: 'Montserrat', sans-serif;
+	display:inline-block;
+	border-radius:3px;
+	text-transform:uppercase;
+	line-height:25px;
+	margin-bottom:20px;
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+.rlink:hover {
+	text-decoration:none;
+	color:#805eac !important;
+	background:#fff;
+}
+
+.rlink:active, .link:focus {
+	background: #805eac;
+	text-decoration:none;
+	color:#fff !important;
+}
